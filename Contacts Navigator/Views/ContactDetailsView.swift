@@ -24,7 +24,9 @@ class ContactDetailsView: UIViewController, ContactDetailsViewProtocol {
     }
     
     deinit {
+        print("ContactDetailsView deinited")
         viewModel?.removeFromModel()
     }
 
 }
+

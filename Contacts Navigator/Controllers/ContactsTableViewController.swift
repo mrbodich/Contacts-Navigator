@@ -55,7 +55,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailsController = segue.destination as? ContactDetailsView, let contact = sender as? Contact else { return }
-        detailsController.viewModel = ContactViewModel(from: contact, pictureSize: nil)
+        detailsController.viewModel = ContactViewModel(from: contact, pictureSize: 1300)
     }
 }
 
