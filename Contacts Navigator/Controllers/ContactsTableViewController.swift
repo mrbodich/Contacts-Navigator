@@ -43,7 +43,7 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as! ContactTableViewCell
         
-        cell.setup(with: ContactViewModel(from: contacts[indexPath.row]))
+        cell.setup(with: ContactViewModel(from: contacts[indexPath.row], pictureSize: 200))
         
         return cell
     }
@@ -55,7 +55,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailsController = segue.destination as? ContactDetailsView, let contact = sender as? Contact else { return }
-        detailsController.viewModel = ContactViewModel(from: contact)
+        detailsController.viewModel = ContactViewModel(from: contact, pictureSize: nil)
     }
 }
 

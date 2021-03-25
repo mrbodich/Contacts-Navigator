@@ -65,20 +65,26 @@ class ContactViewModel {
     let email: String
     var picture: UIImage?
     var pictureDidChange: (() -> ())?
+    let pictureSize: CGFloat?
     weak var contact: Contact?
     
-    init(from contact: Contact) {
+    init(from contact: Contact, pictureSize: CGFloat? = nil) {
         id = UUID().uuidString
         firstName = contact.firstName
         lastName = contact.lastName
         email = contact.email
+        self.pictureSize = pictureSize
         setPicture(contact.picture)
         self.contact = contact
         contact.viewModels[id] = self
     }
     
     func setPicture(_ picture: UIImage?) {
-        self.picture = picture?.resized(to: CGSize(width: 200, height: 200))
+        if let pictureSize = pictureSize {
+            self.picture = picture?.resized(to: CGSize(width: pictureSize, height: pictureSize))
+        } else {
+            self.picture = picture
+        }
     }
     
     func removeFromModel() {

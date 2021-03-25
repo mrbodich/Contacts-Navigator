@@ -14,7 +14,7 @@ class ContactDetailsView: UIViewController, ContactDetailsViewProtocol {
     @IBOutlet weak var avatarImageView: UIImageView!
     
     internal let activityIndicator = UIActivityIndicatorView(style: .medium)
-    weak var viewModel: ContactViewModel?
+    var viewModel: ContactViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
