@@ -28,7 +28,7 @@ final class NetworkManager {
         }
     }
     private var contactsIsBeingFetching = false
-    private let targetContactsCount: Int = 10
+    private let targetContactsCount: Int = 200
 
     static let `default` = NetworkManager()
     private init() {}
