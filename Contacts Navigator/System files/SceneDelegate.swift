@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Contacts Navigator
 //
-//  Created by Bogdan Chernobrivec on 25.03.2021.
+//  Created by Bogdan Chornobryvets on 25.03.2021.
 //
 
 import UIKit
