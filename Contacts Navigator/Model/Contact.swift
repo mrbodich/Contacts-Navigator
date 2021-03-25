@@ -92,8 +92,8 @@ class ContactViewModel {
         pictureDidChange = nil
     }
     
-    deinit {
-        print("ContactViewModel deinited")
-    }
+//    deinit {
+//        print("ContactViewModel deinited")
+//    }
     
 }

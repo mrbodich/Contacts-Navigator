@@ -42,6 +42,7 @@ protocol ContactDetailsViewProtocol: class {
 
 extension ContactDetailsViewProtocol {
     func setup(with model: ContactViewModel) {
+        viewModel?.removeFromModel()
         viewModel = model
         avatarImageView.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
