@@ -8,20 +8,12 @@
 import Foundation
 import UIKit
 
-class Contact: Decodable, CustomStringConvertible {
+class Contact: NSObject, Decodable {
 
     let firstName: String
     let lastName: String
     let email: String
-    var picture: UIImage? {
-        didSet {
-            for viewModel in viewModels.values {
-                viewModel.setPicture(picture)
-                viewModel.pictureDidChange?()
-            }
-        }
-    }
-    var viewModels: [String: ContactViewModel] = [:]
+    @objc dynamic var picture: UIImage?
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -48,7 +40,7 @@ class Contact: Decodable, CustomStringConvertible {
         self.picture = picture
     }
     
-    var description: String {
+    override var description: String {
         return "First name: \(firstName), Last name: \(lastName), email: \(email), picture \(picture == nil ? "❌" : "✅")"
     }
 }
@@ -58,7 +50,7 @@ struct ContactName: Decodable {
     let last: String
 }
 
-class ContactViewModel {
+class ContactViewModel: NSObject {
     let id: String
     let firstName: String
     let lastName: String
@@ -66,7 +58,8 @@ class ContactViewModel {
     var picture: UIImage?
     var pictureDidChange: (() -> ())?
     let pictureSize: CGFloat?
-    weak var contact: Contact?
+    @objc var contact: Contact?
+    var observation: NSKeyValueObservation?
     
     init(from contact: Contact, pictureSize: CGFloat? = nil) {
         id = UUID().uuidString
@@ -74,9 +67,16 @@ class ContactViewModel {
         lastName = contact.lastName
         email = contact.email
         self.pictureSize = pictureSize
+        super.init()
         setPicture(contact.picture)
         self.contact = contact
-        contact.viewModels[id] = self
+        
+        observation = contact.observe(\.picture, options: [.new], changeHandler: { [weak self] object, change in
+            guard let picture = change.newValue else { return }
+
+            self?.setPicture(picture)
+            self?.pictureDidChange?()
+        })
     }
     
     func setPicture(_ picture: UIImage?) {
@@ -87,13 +87,9 @@ class ContactViewModel {
         }
     }
     
-    func removeFromModel() {
-        contact?.viewModels.removeValue(forKey: id)
-        pictureDidChange = nil
+    deinit {
+        observation?.invalidate()
+        print("ContactViewModel deinited")
     }
-    
-//    deinit {
-//        print("ContactViewModel deinited")
-//    }
     
 }

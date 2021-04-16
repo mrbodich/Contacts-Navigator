@@ -22,11 +22,6 @@ class ContactDetailsView: UIViewController, ContactDetailsViewProtocol {
         guard let viewModel = viewModel else { return }
         setup(with: viewModel)
     }
-    
-    deinit {
-        print("ContactDetailsView deinited")
-        viewModel?.removeFromModel()
-    }
 
 }
 

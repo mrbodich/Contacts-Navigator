@@ -25,10 +25,6 @@ class ContactTableViewCell: UITableViewCell, ContactDetailsViewProtocol {
         super.setSelected(selected, animated: animated)
     }
     
-    deinit {
-        viewModel?.removeFromModel()
-    }
-    
 }
 
 protocol ContactDetailsViewProtocol: class {
@@ -42,7 +38,6 @@ protocol ContactDetailsViewProtocol: class {
 
 extension ContactDetailsViewProtocol {
     func setup(with model: ContactViewModel) {
-        viewModel?.removeFromModel()
         viewModel = model
         avatarImageView.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -54,14 +49,14 @@ extension ContactDetailsViewProtocol {
         lastNameLabel.text = model.lastName
         emailLabel.text = model.email
         setAvatarImage(image: model.picture)
-        model.pictureDidChange = { [weak self] in
+        model.pictureDidChange = { [weak self, weak model] in
             DispatchQueue.main.async {
-                self?.setAvatarImage(image: model.picture)
+                self?.setAvatarImage(image: model?.picture)
             }
         }
     }
     
-    private func setAvatarImage(image: UIImage?) {
+    private func setAvatarImage(image: UIImage? = nil) {
         avatarImageView.image = image
         if image == nil {
             activityIndicator.startAnimating()
