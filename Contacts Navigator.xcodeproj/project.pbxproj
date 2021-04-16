@@ -10,6 +10,7 @@
 		E627B02E260C8D7800E2B055 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627B02D260C8D7800E2B055 /* NetworkManager.swift */; };
 		E627B034260CA7F400E2B055 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627B032260CA7F400E2B055 /* ContactTableViewCell.swift */; };
 		E627B035260CA7F400E2B055 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E627B033260CA7F400E2B055 /* ContactTableViewCell.xib */; };
+		E6D8F2AF262969A200FBFAC0 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D8F2AE262969A200FBFAC0 /* ContactViewModel.swift */; };
 		E6E071C3260C8A1E00FA68B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E071C2260C8A1E00FA68B2 /* AppDelegate.swift */; };
 		E6E071C5260C8A1E00FA68B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E071C4260C8A1E00FA68B2 /* SceneDelegate.swift */; };
 		E6E071C7260C8A1E00FA68B2 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E071C6260C8A1E00FA68B2 /* ContactsTableViewController.swift */; };
@@ -26,6 +27,7 @@
 		E627B02D260C8D7800E2B055 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E627B032260CA7F400E2B055 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		E627B033260CA7F400E2B055 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		E6D8F2AE262969A200FBFAC0 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		E6E071BF260C8A1E00FA68B2 /* Contacts Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contacts Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E071C2260C8A1E00FA68B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E071C4260C8A1E00FA68B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E6E071DA260C8B1800FA68B2 /* Contact.swift */,
+				E6D8F2AE262969A200FBFAC0 /* ContactViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				E6F94DCF260CC1B10023A9E9 /* UIExtensions.swift in Sources */,
 				E6E071C7260C8A1E00FA68B2 /* ContactsTableViewController.swift in Sources */,
 				E627B02E260C8D7800E2B055 /* NetworkManager.swift in Sources */,
+				E6D8F2AF262969A200FBFAC0 /* ContactViewModel.swift in Sources */,
 				E6E071C3260C8A1E00FA68B2 /* AppDelegate.swift in Sources */,
 				E6E071C5260C8A1E00FA68B2 /* SceneDelegate.swift in Sources */,
 			);
