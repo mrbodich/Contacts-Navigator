@@ -21,7 +21,7 @@
 		E6D3AD65267A5187007723C7 /* ContentViewModelFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD64267A5187007723C7 /* ContentViewModelFabric.swift */; };
 		E6D3AD68267A5F53007723C7 /* ContentListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD67267A5F53007723C7 /* ContentListViewModelProtocol.swift */; };
 		E6D3AD6A267A5F72007723C7 /* ContentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD69267A5F72007723C7 /* ContentViewModelProtocol.swift */; };
-		E6D3AD6C267A684A007723C7 /* ContentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD6B267A684A007723C7 /* ContentFetcher.swift */; };
+		E6D3AD6C267A684A007723C7 /* ContentFetcher Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD6B267A684A007723C7 /* ContentFetcher Protocol.swift */; };
 		E6D3AD6F267A6C94007723C7 /* ContactNetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD6E267A6C94007723C7 /* ContactNetworkFetcher.swift */; };
 		E6D3AD73267A762B007723C7 /* NetworkImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD72267A762B007723C7 /* NetworkImageFetcher.swift */; };
 		E6D3AD75267A7636007723C7 /* CacheImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D3AD74267A7636007723C7 /* CacheImageFetcher.swift */; };
@@ -64,7 +64,7 @@
 		E6D3AD64267A5187007723C7 /* ContentViewModelFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelFabric.swift; sourceTree = "<group>"; };
 		E6D3AD67267A5F53007723C7 /* ContentListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewModelProtocol.swift; sourceTree = "<group>"; };
 		E6D3AD69267A5F72007723C7 /* ContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelProtocol.swift; sourceTree = "<group>"; };
-		E6D3AD6B267A684A007723C7 /* ContentFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFetcher.swift; sourceTree = "<group>"; };
+		E6D3AD6B267A684A007723C7 /* ContentFetcher Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentFetcher Protocol.swift"; sourceTree = "<group>"; };
 		E6D3AD6E267A6C94007723C7 /* ContactNetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactNetworkFetcher.swift; sourceTree = "<group>"; };
 		E6D3AD72267A762B007723C7 /* NetworkImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageFetcher.swift; sourceTree = "<group>"; };
 		E6D3AD74267A7636007723C7 /* CacheImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageFetcher.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		E6D3AD71267A75F0007723C7 /* Content Fetcher */ = {
 			isa = PBXGroup;
 			children = (
-				E6D3AD6B267A684A007723C7 /* ContentFetcher.swift */,
+				E6D3AD6B267A684A007723C7 /* ContentFetcher Protocol.swift */,
 				E6D3AD6E267A6C94007723C7 /* ContactNetworkFetcher.swift */,
 			);
 			path = "Content Fetcher";
@@ -376,7 +376,7 @@
 				E6D3AD63267A44DC007723C7 /* ContentListModel.swift in Sources */,
 				E68DEF88267884B200520EB3 /* Coordinator.swift in Sources */,
 				E6D3AD68267A5F53007723C7 /* ContentListViewModelProtocol.swift in Sources */,
-				E6D3AD6C267A684A007723C7 /* ContentFetcher.swift in Sources */,
+				E6D3AD6C267A684A007723C7 /* ContentFetcher Protocol.swift in Sources */,
 				E6D3AD5B267A3735007723C7 /* ContentViewModel.swift in Sources */,
 				E6E071C3260C8A1E00FA68B2 /* AppDelegate.swift in Sources */,
 				E6D3AD5D267A3B6C007723C7 /* AppCoordinator.swift in Sources */,

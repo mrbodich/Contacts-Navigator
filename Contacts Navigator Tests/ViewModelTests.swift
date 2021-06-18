@@ -19,6 +19,7 @@ class ViewModelTests: XCTestCase {
 
     override func tearDownWithError() throws {
         viewModelFabric = nil
+        expectation = nil
     }
 
     func testContactDetailsViewModel() throws {
@@ -48,14 +49,10 @@ class ViewModelTests: XCTestCase {
         listViewModel.contentListCoordinatorDelegate = self
         listViewModel.contentListViewDelegate = self
         
-        let contactsFetcher = ContactsLocalFetcher(defaultContent: [ContactModel(id: "0", firstName: "John", lastName: "Brown", email: "john.brown@host.com"),
-                                                                    ContactModel(id: "1", firstName: "Lisa", lastName: "Shwartz", email: "lisa.shwartz@host.com"),
-                                                                    ContactModel(id: "2", firstName: "Denis", lastName: "Williams", email: "denis.williams@host.com")])
+        let contactsFetcher = ContactsFetcherMock()
         
         let contactListModel = ContactsListModel(contentFetcher: contactsFetcher)
         listViewModel.model = contactListModel
-        
-        
         
         wait(for: [expectation!], timeout: 1)
     }
@@ -76,5 +73,26 @@ extension ViewModelTests: ContentListCoordinatorDelegate {
 extension ViewModelTests: ContentListViewDelegate {
     func contentDidChange() {
         expectation?.fulfill()
+    }
+}
+
+fileprivate final class ContactsFetcherMock: ContentFetcher {
+    
+    private var defaultContent: [ContentModel]
+    
+    init() {
+        var contentList: [ContactModel] = []
+        contentList.append(ContactModel(id: "0", firstName: "Serg", lastName: "Brown", email: "serg.brown@gmail.com"))
+        contentList.append(ContactModel(id: "1", firstName: "Mary", lastName: "Laura", email: "mary@gmail.com"))
+        contentList.append(ContactModel(id: "2", firstName: "Gary", lastName: "Solarus", email: "solarus@gmail.com"))
+        contentList.append(ContactModel(id: "3", firstName: "Richard", lastName: "Lipstigh", email: "rlipstigh@gmail.com"))
+        contentList.append(ContactModel(id: "4", firstName: "Paul", lastName: "Born", email: "paul12345@gmail.com"))
+        contentList.append(ContactModel(id: "5", firstName: "Prometheus", lastName: "Calin", email: "prom.calin@gmail.com"))
+        
+        defaultContent = contentList
+    }
+    
+    func fetchContentList(_ completion: @escaping (_ content: [ContentModel]) -> ()) {
+        completion(defaultContent)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ContactsNetworkFetcher: ContentFetcher {
+final class ContactsNetworkFetcher: ContentFetcher {
     private var fetchedContacts: [RandomUserContact]?
     private var contactsIsBeingFetching = false
     
